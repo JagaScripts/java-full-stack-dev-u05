@@ -1,7 +1,6 @@
 package ejercicio3;
 
 import javax.swing.JOptionPane;
-
 /**
  * 
  * @author Jose Antonio Gonz�lez Alc�ntara
