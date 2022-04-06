@@ -1,4 +1,4 @@
-package Ejercicio1;
+package ejercicio1;
 /**
  * 
  * @author Jose Antonio Gonz�lez Alc�ntara
