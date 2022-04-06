@@ -5,7 +5,7 @@ import java.util.Scanner;
  * 
  * @author Jose Antonio Gonz�lez Alc�ntara
  * 
- * Clase de Java de la TA05-Flujo de datos Ejercicio2
+ * Clase de Java de la TA05-Flujo de datos Ejercicio 2
  *
  */
 public class Ej2 {

@@ -3,7 +3,7 @@ package ejercicio1;
  * 
  * @author Jose Antonio Gonz�lez Alc�ntara
  * 
- * Clase de Java de la TA05-Flujo de datos Ejercicio1
+ * Clase de Java de la TA05-Flujo de datos Ejercicio 1
  *
  */
 public class Ej1 {
