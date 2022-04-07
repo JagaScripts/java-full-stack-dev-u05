@@ -1,7 +1,5 @@
 package ejercicio6;
 
-import java.text.DecimalFormat;
-
 import javax.swing.JOptionPane;
 
 /**
