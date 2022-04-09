@@ -29,7 +29,8 @@ public class Ej4 {
 		do {
 		
 			//Pedimos nombre al usuario
-			entradaTeclado = JOptionPane.showInputDialog("Introduce el radio, el valor tienen que ser númerico, el separador decimal es el . (punto)");
+			entradaTeclado = JOptionPane.showInputDialog("Introduce el radio, el valor tienen que ser númerico," + 
+														 " el separador decimal es el . (punto)");
 		
 			//Si cancelamos el pane
 			

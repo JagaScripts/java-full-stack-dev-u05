@@ -24,7 +24,7 @@ public class Ej5 {
 		do {
 
 			//Pedimos número
-			entradaTeclado = JOptionPane.showInputDialog("Introduce el radio");
+			entradaTeclado = JOptionPane.showInputDialog("Introduce un múmero entero");
 
 			if (entradaTeclado != null) {
 
