@@ -18,19 +18,51 @@ public class Ej6 {
 		
 		//El IVA sera una constante que sera del 21%
 		final double IVA = 0.21;
+		String entradaTeclado;
+		double precioProducto;
+		double precioConIVA;
+		boolean esNumerico;
 		
-		//Pedimos precio del producto
-		String cadena = JOptionPane.showInputDialog("Introduce el precio del producto (puede tener decimales");
+		do {
+			
+			
+			//Pedimos precio del producto
+			entradaTeclado = JOptionPane.showInputDialog("Introduce el precio del producto "
+					+ "el valor tienen que ser númerico, el separador decimal es el . (punto)\"");
+			
 		
-		//Parseamos a double
-		double precioProducto = Double.parseDouble(cadena);
+			//Si cancelamos el Pane		
+			if (entradaTeclado != null) {
+				
+				//Como aún no hemos visto manejo de excepciones
+				//Compruebo mediante el metodo matches del tipo String si lo introducido es un número
+				esNumerico = entradaTeclado.matches("[+-]?\\d*(\\.\\d+)?");
+				
+				if (esNumerico) {
+									
+					//Parseamos a double
+					precioProducto = Double.parseDouble(entradaTeclado);
+					
+					//calculamos el precio con IVA
+					precioConIVA = precioProducto * (1 + IVA);
+					
+					//Mostramos el precio del producto con IVA incluido
+					JOptionPane.showMessageDialog(null, "El precio final del producto es " + precioConIVA );
+					
+				}else {
+					
+					JOptionPane.showMessageDialog(null, "No has introducido un número valido");
+					
+				}
+				
+			}else {
+				
+				esNumerico = false;
+			}
+					
+		}while(!esNumerico && entradaTeclado != null);
 		
-		//calculamos el precio con IVA
-		double precioConIVA = precioProducto * (1 + IVA);
-		
-		//Mostramos el precio del producto con IVA incluido
-		JOptionPane.showMessageDialog(null, "El precio final del producto es " + precioConIVA );
-		
+		JOptionPane.showMessageDialog(null, "La plicación se cerrara");		
 
 	}
 
