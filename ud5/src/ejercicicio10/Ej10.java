@@ -19,21 +19,21 @@ public class Ej10 {
 		  piensa que es lo que se repite y lo que no*/
 		
 		//Declaramos para pedir los datos
-		String input;
+		String entradaTeclado;
 		
 		do {
 		
 			//Pedimos el número de ventas a introducir
-			input = JOptionPane.showInputDialog("Introduce las ventas que vas a realizar");
+			entradaTeclado = JOptionPane.showInputDialog("Introduce las ventas que vas a realizar");
 			
-			if (input == null) {
-				input = "0";
+			if (entradaTeclado == null) {
+				entradaTeclado = "0";
 			}
 			
-		} while (input.isEmpty());
+		} while (entradaTeclado.isEmpty());
 		
 		//Parseamos a int
-		int cantidadVentas = Integer.parseInt(input);
+		int cantidadVentas = Integer.parseInt(entradaTeclado);
 		
 		/*Comprobamos si el número de ventas es distinto que 0
 		  no tiene sentido no hacer ventas*/
@@ -47,16 +47,16 @@ public class Ej10 {
 				do {
 					
 					//Pedimos las ventas a introducir
-					input = JOptionPane.showInputDialog("Introduce la cantidad de la venta número " + index);
+					entradaTeclado = JOptionPane.showInputDialog("Introduce la cantidad de la venta número " + index);
 					
 					//Comprueba que haya introducido algun dato
-					if (input == null ) {
-						input = "0";
+					if (entradaTeclado == null ) {
+						entradaTeclado = "0";
 						
-					} else if (!input.isEmpty()) {
+					} else if (!entradaTeclado.isEmpty()) {
 												
 						//Parseamos a double
-						precioVenta = Double.parseDouble(input);
+						precioVenta = Double.parseDouble(entradaTeclado);
 					
 						//Acumulamos los precios introducidos
 						precioAcumulado += precioVenta;
@@ -65,10 +65,10 @@ public class Ej10 {
 						
 					}
 
-				} while (input != "0" && index <= cantidadVentas);
+				} while (entradaTeclado != "0" && index <= cantidadVentas);
 			
 			//Mostramos la suma de todas la ventas
-			if (input != "0") {
+			if (entradaTeclado != "0") {
 				JOptionPane.showMessageDialog(null, "Las ventas suman " + precioAcumulado);
 			}
 			
