@@ -21,43 +21,87 @@ public class CalculadoraInversa {
 		
 		int operador1;
 		int operador2;
+		Double resultado;
 		char signo;
+		boolean esNumerico;
+		boolean esSignoValido;
+		String entradaTeclado;
 
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduce el operador 1 ");
-		operador1 = (int) sc.nextInt();
-		System.out.println("Introduce el operador 2 ");
-		operador2 = (int) sc.nextInt();
-		System.out.println("Introduce el signo ");
-		signo = (char) sc.next().charAt(0);
+		Scanner scanner = new Scanner(System.in);
 		
-		switch (signo) {
-		case '+':
-			System.out.println("El resultado de la operación es " + (operador1 + operador2));
-			break;
-		case '-':
-			System.out.println("El resultado de la operación es " + (operador1 - operador2));
-			break;
-		case '*':
-			System.out.println("El resultado de la operación es " + (operador1 * operador2));
-			break;
-		case '/':
-			System.out.println("El resultado de la operación es " + (operador1 / operador2));
-			break;
-		case '^':
-			System.out.println("El resultado de la operación es " + (operador1 ^ operador2));
-			break;
-		case '%':
-			System.out.println("El resultado de la operación es " + (operador1 % operador2));
-			break;
-		default:
-			System.out.println("El signo introducido no es un operando");
-			break;
-		}
+			do {
+				
+				System.out.println("Introduce el operador 1, que sea un múmero entero");
+				entradaTeclado = scanner.nextLine();
+				esNumerico = entradaTeclado.matches("-?\\d+");
+				if (!esNumerico) {
+					System.out.println("Porfavor el operador ha de ser entero");
+				}
+				
+			} while (!esNumerico);
 		
-		sc.close();
+		operador1 = Integer.parseInt(entradaTeclado);
 		
+		do {
+			
+			System.out.println("Introduce el operador 2, que sea un múmero entero");
+			entradaTeclado = scanner.nextLine();
+			esNumerico = entradaTeclado.matches("-?\\d+");
+			if (!esNumerico) {
+				System.out.println("Porfavor el operador ha de ser entero");
+			}
+			
+		} while (!esNumerico);
+		
+		operador2 = Integer.parseInt(entradaTeclado);
+		
+		do {
+			
+			System.out.println("Introduce un signo de operando válido entre +, -, x, /, % y ^");
+			
+			entradaTeclado = scanner.nextLine();
+
+			esSignoValido = (entradaTeclado.length() == 1);
+			
+			if (esSignoValido) {
+				
+				signo = (char) entradaTeclado.charAt(0);
+				
+				switch (signo) {
+				case '+':
+					System.out.println("El resultado de la operación es " + (operador1 + operador2));
+					break;
+				case '-':
+					System.out.println("El resultado de la operación es " + (operador1 - operador2));
+					break;
+				case 'x':
+					System.out.println("El resultado de la operación es " + (operador1 * operador2));
+					break;
+				case '/':
+					System.out.println("El resultado de la operación es " + (operador1 / operador2));
+					break;
+				case '^':
+					System.out.println("El resultado de la operación es " + (int) Math.pow(operador1, operador2));
+					break;
+				case '%':
+					System.out.println("El resultado de la operación es " + (operador1 % operador2));
+					break;
+				default:
+					System.out.println("El signo introducido no es un operando válido");
+					esSignoValido = false;
+					break;
+				}
+				
+			}else {
+				
+				System.out.println("Porfavor un operando válido, tienes que ser un solo caracter");
+				
+			}
+			
+		} while (!esSignoValido);
+		
+		scanner.close();		
 	}
 
 }
