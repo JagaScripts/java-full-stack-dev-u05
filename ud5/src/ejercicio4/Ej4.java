@@ -36,7 +36,7 @@ public class Ej4 {
 			if (entradaTeclado != null) {
 				
 				//Como aún no hemos visto manejo de excepciones
-				//Compruebo mediante el metodo matches si lo introducido es un número
+				//Compruebo mediante el metodo matches del tipo String si lo introducido es un número
 				esNumerico = entradaTeclado.matches("[+-]?\\d*(\\.\\d+)?");
 				
 				if (esNumerico) {
@@ -48,7 +48,7 @@ public class Ej4 {
 					areaCirculo  = PI * Math.pow(radioCirculo, 2);
 					
 					//Mostramos resultado en pantalla
-					JOptionPane.showMessageDialog(null, "El area del circulo con radio " + (int)radioCirculo + " es " + areaCirculo);
+					JOptionPane.showMessageDialog(null, "El area del circulo con radio " + radioCirculo + " es " + areaCirculo);
 					
 				}else {
 					
