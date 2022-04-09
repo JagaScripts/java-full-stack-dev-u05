@@ -21,7 +21,6 @@ public class CalculadoraInversa {
 		
 		int operador1;
 		int operador2;
-		Double resultado;
 		char signo;
 		boolean esNumerico;
 		boolean esSignoValido;
