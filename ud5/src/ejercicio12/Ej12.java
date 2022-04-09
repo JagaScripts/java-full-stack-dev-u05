@@ -21,44 +21,44 @@ public class Ej12 {
 		  Piensas bien en la condición de salida
 		  (3 intentos y si aciertas sale, aunque le queden intentos)*/
 		
-		final String PASSWORD = "1234";
-		int attempts = 3; 
-		String input;
-		boolean match = false;
+		final String CONTRASENA = "1234";
+		int intentos = 3; 
+		String entradaTeclado;
+		boolean acierto = false;
 		boolean cancel = false;
 		
 		do {
 			
 			//Pedimos la contraseña
-			input = JOptionPane.showInputDialog("Introduce la contraseña tienes " + attempts + " intentos");
+			entradaTeclado = JOptionPane.showInputDialog("Introduce la contraseña tienes " + intentos + " intentos");
 			
-			if (input != null) {
+			if (entradaTeclado != null) {
 				
-				if (input.equals(PASSWORD)) {
+				if (entradaTeclado.equals(CONTRASENA)) {
 					
-					match = true;
+					acierto = true;
 					
 				}else {
 					
-					attempts--;
+					intentos--;
 										
 				}
-				
 			}else {
 				
-				cancel = true;
+				acierto = false;
+				
 			}
 			
-		} while (attempts > 0 && match == false && cancel == false);
+		} while (intentos > 0 && acierto == false && entradaTeclado != null);
 		
-		if(match == true) {
+		if(acierto == true) {
 			
 			JOptionPane.showMessageDialog(null,"Enhorabuena");
 			
 		}
-		if(cancel == true){
+		if(entradaTeclado == null){
 			
-			JOptionPane.showMessageDialog(null,"As cancelado");
+			JOptionPane.showMessageDialog(null,"La plicación se cerrara");
 		}
 
 	}
