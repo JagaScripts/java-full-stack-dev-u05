@@ -21,21 +21,49 @@ public class Ej4 {
 		final double PI = Math.PI;
 		
 		//Declaramos la variable que almacena el texto introducido por el usuario y el radio
-		String texto;
-		double radio;
+		String entradaTeclado;
+		double radioCirculo;
+		double areaCirculo;
+		boolean esNumerico;
 		
-		//Pedimos nombre al usuario
-		texto = JOptionPane.showInputDialog("Introduce el radio");
+		do {
 		
-		//Parseamos a double el texto para que sea un double
-		radio = Double.parseDouble(texto);
+			//Pedimos nombre al usuario
+			entradaTeclado = JOptionPane.showInputDialog("Introduce el radio, el valor tienen que ser númerico, el separador decimal es el . (punto)");
 		
-		//Calculamos el area del circulo
-		double area;
-		area  = PI * Math.pow(radio, 2);
+			//Si cancelamos el pane
+			
+			if (entradaTeclado != null) {
+				
+				//Como aún no hemos visto manejo de excepciones
+				//Compruebo mediante el metodo matches si lo introducido es un número
+				esNumerico = entradaTeclado.matches("[+-]?\\d*(\\.\\d+)?");
+				
+				if (esNumerico) {
+					
+					//Parseamos a double el texto para que sea un double
+					radioCirculo = Double.parseDouble(entradaTeclado);
+					
+					//Calculamos el area del circulo
+					areaCirculo  = PI * Math.pow(radioCirculo, 2);
+					
+					//Mostramos resultado en pantalla
+					JOptionPane.showMessageDialog(null, "El area del circulo con radio " + (int)radioCirculo + " es " + areaCirculo);
+					
+				}else {
+					
+					JOptionPane.showMessageDialog(null, "No has introducido un número valido");
+					
+				}
+				
+			}else {
+				
+				esNumerico = false;
+			}
+					
+		}while(!esNumerico && entradaTeclado != null);
 		
-		//Mostramos resultado en pantalla
-		JOptionPane.showMessageDialog(null, "El area del circulo con radio " + (int)radio + " es " + area);
+		JOptionPane.showMessageDialog(null, "La plicación se cerrara");
 		
 
 	}
