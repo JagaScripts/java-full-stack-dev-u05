@@ -23,7 +23,6 @@ public class Ej11 {
 			entradaTeclado = JOptionPane.showInputDialog("Introduce el dia de la semana");
 		
 			//Si cancelamos el pane
-			
 			if (entradaTeclado != null) {
 				
 				entradaTeclado = entradaTeclado.toLowerCase();
@@ -55,6 +54,8 @@ public class Ej11 {
 							break;
 					}
 			}
+			
+			entradaTeclado = null;
 					
 		}while(entradaTeclado != null);
 		
